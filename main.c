@@ -13,9 +13,38 @@ void listaCompleta();
 void pesquisar();
 
 int main(void){
-    cadastro();
-    listaCompleta();
-    // pesquisar();
+    do
+    {
+        system("clear");
+        printf("\n======== Locadora de Carros ========\n\n |-1 Cadastrar Usuário \n |-2 Listar Usuários \n |-3 Consultar Usuário \n |-4 Sair");
+        printf("\n====================================\n\n => Digite a sua opção: ");
+        scanf("%d", &op);
+
+        switch (op)
+        {
+            case 1:
+                cadastro();
+                break;
+            
+            case 2:
+                listaCompleta();
+                break;
+            
+            case 3:
+                pesquisar();
+                break;
+            
+            case 4:
+                system("exit");
+                break;
+            
+            default:
+                printf("Comando inválido!!");
+                break;
+        }
+
+    } while (op != 4);
+    
 }
 
 void cadastro(){
@@ -57,6 +86,8 @@ void listaCompleta(){
             break;
         }
     }
+    getchar();
+    getchar();
 }
 
 void pesquisar(){
@@ -66,7 +97,7 @@ void pesquisar(){
 
     do
     {
-        printf("\nDigite 1 para consultar pelo Nome ou 2 para consultar pelo Email: ");
+        printf("\nDigite 1 para consultar pelo CPF ou 2 para consultar pelo Email: ");
         scanf("%d", &op);
         switch (op)
         {
@@ -97,7 +128,7 @@ void pesquisar(){
                 printf("\nUsuário não encontrado.");
                 break;
         }
-        printf("\nDigite 1 para continauar Pesquisando: ");
+        printf("\nDigite 1 para continuar Pesquisando: ");
         scanf("%d", &op);
         
     } while (op==1);
