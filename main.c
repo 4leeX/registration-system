@@ -40,6 +40,8 @@ int main(void){
             
             default:
                 printf("Comando inválido!!");
+                getchar();
+                getchar();
                 break;
         }
 
