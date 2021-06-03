@@ -9,12 +9,13 @@ int tempo[TAM];
 
 int op;
 void cadastro();
-
+void listaCompleta();
 void pesquisar();
 
 int main(void){
     cadastro();
-    pesquisar();
+    listaCompleta();
+    // pesquisar();
 }
 
 void cadastro(){
@@ -46,6 +47,18 @@ void cadastro(){
     
 }
 
+void listaCompleta(){
+    int l;
+
+    for(l = 0; l < TAM; l++){
+        if(cpf[l] > 0){
+            printf("\nNome: %s\nE-mail: %s\nCPF: %d \nCarro: %s \nTempo: %d \n", nome[l], email[l], cpf[l],  carro[l], tempo[l]);
+        }else{
+            break;
+        }
+    }
+}
+
 void pesquisar(){
     int consultaCPF;
     char consultaEmail[50];
@@ -63,7 +76,7 @@ void pesquisar(){
                 for (i = 0; i < TAM; i++)
                 {
                     if(cpf[i] == consultaCPF){
-                        printf("\nNome: %s\nE-mail: %s\nCPF: %d", nome[i], email[i], cpf[i]);
+                        printf("\nNome: %s\nE-mail: %s\nCPF: %d \nCarro: %s \nTempo: %d \n" , nome[i], email[i], cpf[i], carro[i], tempo[i]);
                     }
                 }
                 
@@ -75,7 +88,7 @@ void pesquisar(){
                 for (i = 0; i < TAM; i++)
                 {
                     if(strcmp(email[i], consultaEmail) == 0){
-                        printf("\nNome: %s\nE-mail: %s\nCPF: %d", nome[i], email[i], cpf[i]);
+                        printf("\nNome: %s\nE-mail: %s\nCPF: %d \nCarro: %s \nTempo: %d \n" , nome[i], email[i], cpf[i], carro[i], tempo[i]);
                     }
                 }
 
